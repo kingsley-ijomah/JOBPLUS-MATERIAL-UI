@@ -29,14 +29,15 @@ const drawerWidth = '100%';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    '& .MuiIconButton-root': {
+      paddingRight: 0,
+    }
   },
-  toolbarWrapper: {
-    width: '900px',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
-    margin: '0 auto',
+  container: {
+    ...theme.container,
+    '& h6': {
+      ...theme.fonts.bold,
+    }
   },
   tabs: {
     minWidth: 10,
@@ -48,9 +49,6 @@ const useStyles = makeStyles((theme) => ({
   },
   iconsWrap: {
     marginLeft: 'auto',
-    [theme.breakpoints.down('sm')]: {
-      paddingRight: '25px'
-    },
   },
   icons: {
     fontSize: '29px',
@@ -74,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
+  hamburger: {
+    fontSize: '2rem',
+    marginRight: '15px',
+  },
 }));
 
 export default function Navbar({ props }) {
@@ -92,8 +94,8 @@ export default function Navbar({ props }) {
 
   return (
     <Box className={classes.root}>
-      <AppBar>
-        <Toolbar className={classes.toolbarWrapper}>
+      <AppBar position="static">
+        <Toolbar className={classes.container}>
           <Hidden mdUp>
             <IconButton
               edge="start"
@@ -101,11 +103,11 @@ export default function Navbar({ props }) {
               aria-label="menu"
               onClick={handleDrawerOpen}
             >
-              <MenuIcon />
+              <MenuIcon className={classes.hamburger} />
             </IconButton>
           </Hidden>
 
-          <Typography variant="h7">JOBPLUS</Typography>
+          <Typography component="h6">JOBPLUS</Typography>
 
           <Hidden smDown>
             <Tabs>
@@ -166,6 +168,7 @@ export default function Navbar({ props }) {
           </ListItem>
         </List>
       </Drawer>
+
     </Box>
   )
 }
