@@ -42,7 +42,6 @@ export default createMuiTheme({
   container: {
     width: '900px',
     margin: '0 auto',
-    border: '1px red dotted',
     // padding: '0 2rem',
     [breakpoints.down('sm')]: {
       width: '100%',

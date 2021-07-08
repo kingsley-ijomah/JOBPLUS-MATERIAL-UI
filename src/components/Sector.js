@@ -67,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
     '& a': {
       textDecoration: 'none',
       color: theme.palette.common.beta,
+      '&:hover': {
+        textDecoration: 'none'
+      },
     },
     '& li': {
       marginTop: '0.4rem'
@@ -100,59 +103,53 @@ export default function Sector({ props }) {
       </div>
 
       <div className={classes.types}>
-        <Link href="#">
-          <div className={classes.wrap}>
-            <div className={classes.picture}>
-              <img src={'images/tech-big.jpg'} alt={''} />
-            </div>
-
-            <p className={classes.name}>Technology</p>
-
-            <Hidden smDown>
-              <ul className={classes.list}>
-                <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-                <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-                <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
-              </ul>
-            </Hidden>
+        <div className={classes.wrap}>
+          <div className={classes.picture}>
+            <img src={'images/tech-big.jpg'} alt={''} />
           </div>
-        </Link>
 
-        <Link href="#">
-          <div className={classes.wrap}>
-            <div className={classes.picture}>
-              <img src={'images/eng-big.jpg'} alt={''} />
-            </div>
+          <p className={classes.name}>Technology</p>
 
-            <p className={classes.name}>Engineering</p>
+          <Hidden smDown>
+            <ul className={classes.list}>
+              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
+              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
+              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+            </ul>
+          </Hidden>
+        </div>
 
-            <Hidden smDown>
-              <ul className={classes.list}>
-                <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-                <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-                <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
-              </ul>
-            </Hidden>
+        <div className={classes.wrap}>
+          <div className={classes.picture}>
+            <img src={'images/eng-big.jpg'} alt={''} />
           </div>
-        </Link>
 
-        <Link href="#">
-          <div className={classes.wrap}>
-            <div className={classes.picture}>
-              <img src={'images/health-big.jpg'} alt={''} />
-            </div>
+          <p className={classes.name}>Engineering</p>
 
-            <p className={classes.name}>Health</p>
+          <Hidden smDown>
+            <ul className={classes.list}>
+              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
+              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
+              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+            </ul>
+          </Hidden>
+        </div>
 
-            <Hidden smDown>
-              <ul className={classes.list}>
-                <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-                <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-                <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
-              </ul>
-            </Hidden>
+        <div className={classes.wrap}>
+          <div className={classes.picture}>
+            <img src={'images/health-big.jpg'} alt={''} />
           </div>
-        </Link>
+
+          <p className={classes.name}>Health</p>
+
+          <Hidden smDown>
+            <ul className={classes.list}>
+              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
+              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
+              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+            </ul>
+          </Hidden>
+        </div>
       </div>
 
       <Hidden mdUp>

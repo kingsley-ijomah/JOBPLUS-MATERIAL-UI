@@ -1,102 +1,53 @@
 import React from 'react';
-import { createMuiTheme, ThemeProvider, styled, makeStyles, withStyles } from '@material-ui/core/styles';
-import Checkbox from '@material-ui/core/Checkbox';
-import { green, orange } from '@material-ui/core/colors';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import clsx from "clsx";
-import Box from '@material-ui/core/Box';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
+import IconButton from '@material-ui/core/IconButton';
+import Collapse from '@material-ui/core/Collapse';
+import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/Close';
 
-
-const StyledCheckbox = styled(Checkbox)`
-  .MuiCheckbox-checked {
-    color: yellow;
-  }
-`;
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
-  },
-  icon: {
-    borderRadius: 3,
-    width: 16,
-    height: 16,
-    backgroundColor: "#ebf1f5",
-    "input:hover ~ &": {
-      backgroundColor: "#ebf1f5"
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
     },
-    "input:disabled ~ &": {
-      boxShadow: "none"
-    }
   },
-  checkedIcon: {
-    backgroundColor: "#137cbd",
-    backgroundImage: "blue",
-    "&:before": {
-      display: "block",
-      width: 16,
-      height: 16,
-      backgroundColor: "gray"
-    },
-    "input:hover ~ &": {
-      backgroundColor: "pink"
-    }
-  }
-})
+}));
 
-const outerTheme = createMuiTheme({
-  overrides: {
-    MuiCheckbox: {
-      colorSecondary: {
-        color: 'red',
-        '&$checked': {
-          color: 'purple',
-        },
-      },
-    },
-  },
-  palette: {
-    secondary: {
-      main: orange[500],
-    },
-  },
-});
-
-const innerTheme = createMuiTheme({
-  palette: {
-    secondary: {
-      main: green[500],
-    },
-    common: {
-      main: 'red',
-    }
-  },
-});
-
-const defaultIcon = <AccessAlarmIcon />;
-
-export default function ThemeNesting() {
+export default function TransitionAlerts() {
   const classes = useStyles();
-
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <Box className="">This box has a responsive width.</Box>
-    // <Checkbox
-    //   defaultChecked
-    //   className={classes.root}
-    //   color="default"
-    //   checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
-    // />
-    // <StyledCheckbox
-    //   defaultChecked
-    // />
-    // <ThemeProvider theme={outerTheme}>
-    //   <Checkbox defaultChecked />
-    //   <ThemeProvider theme={innerTheme}>
-    //     <Checkbox defaultChecked />
-    //   </ThemeProvider>
-    // </ThemeProvider>
+    <div className={classes.root}>
+      <Collapse in={open}>
+        <Alert
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          Close me!
+        </Alert>
+      </Collapse>
+      <Button
+        disabled={open}
+        variant="outlined"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Re-open
+      </Button>
+    </div>
   );
 }
