@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 

@@ -37,6 +37,10 @@ export default createMuiTheme({
       elements: `${elements}`,
       light: `${light}`,
       skills: `${skills}`,
+    },
+    background: {
+      // site's background colour
+      default: `${delta}`
     }
   },
   container: {

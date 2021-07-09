@@ -24,6 +24,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from "react-router-dom";
 
 const drawerWidth = '100%';
 
@@ -111,14 +112,14 @@ export default function Navbar({ props }) {
 
           <Hidden smDown>
             <Tabs>
-              <Tab className={classes.tabs} label="Home" />
-              <Tab className={classes.tabs} label="Job listing" />
-              <Tab className={classes.tabs} label="Job applications" />
+              <Tab className={classes.tabs} label="Home" component={Link} to={'/'} />
+              <Tab className={classes.tabs} label="Job listing" component={Link} to={'/job-listings'} />
+              <Tab className={classes.tabs} label="Job applications" component={Link} to={'/job-applications'} />
             </Tabs>
           </Hidden>
 
           <Box className={classes.iconsWrap}>
-            <IconButton edge="start" color="inherit">
+            <IconButton component={Link} to={'/search'} edge="start" color="inherit">
               <SearchIcon className={classes.icons} />
             </IconButton>
             <IconButton edge="start" color="inherit">
@@ -157,13 +158,13 @@ export default function Navbar({ props }) {
         </div>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem component={Link} to={'/'} button>
             <ListItemText primary={'HOME'} />
           </ListItem>
-          <ListItem button>
+          <ListItem component={Link} to={'/job-listings'} button>
             <ListItemText primary={'JOB LISTING'} />
           </ListItem>
-          <ListItem button>
+          <ListItem component={Link} to={'/job-applications'} button>
             <ListItemText primary={'JOB APPLICATION'} />
           </ListItem>
         </List>
