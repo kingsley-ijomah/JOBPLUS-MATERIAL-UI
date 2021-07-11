@@ -6,7 +6,7 @@ export default function Home({ props }) {
 
   return (
     <React.Fragment>
-      <Hero />
+      <Hero labelColor='secondary' />
       <Sector />
     </React.Fragment>
   )

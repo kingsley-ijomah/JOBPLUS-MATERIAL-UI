@@ -122,17 +122,17 @@ export default function Navbar({ props }) {
             <IconButton component={Link} to={'/search'} edge="start" color="inherit">
               <SearchIcon className={classes.icons} />
             </IconButton>
-            <IconButton edge="start" color="inherit">
+            <IconButton component={Link} to={'/notifications'} edge="start" color="inherit">
               <Badge color="error" overlap="circle" variant="dot">
                 <NotificationsNoneIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton edge="start" color="inherit" >
+            <IconButton component={Link} to={'/saved-jobs'} edge="start" color="inherit" >
               <Badge badgeContent={2} classes={{ badge: classes.badge }}>
                 <StarBorderIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton edge="start" color="inherit">
+            <IconButton component={Link} to={'/profile'} edge="start" color="inherit">
               <PersonOutlineIcon className={classes.icons} />
             </IconButton>
             <IconButton edge="start" color="inherit">

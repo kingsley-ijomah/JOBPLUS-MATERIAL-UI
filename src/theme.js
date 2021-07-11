@@ -65,5 +65,5 @@ export default createMuiTheme({
     light: {
       fontFamily: 'OpenSans-Light',
     }
-  }
+  },
 });
