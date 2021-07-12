@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
       display: 'grid',
       gridTemplateColumns: 'repeat(2, auto) 150px',
       gridGap: '0.5rem',
-      // alignItems: 'end'
     }
   },
   button: {
