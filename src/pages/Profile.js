@@ -9,7 +9,6 @@ export default function Profile(props) {
   return (
     <>
       <PageTitle title='Profile' />
-      <Hero heroType='plain' />
 
       <PaperForm>
         <Form>

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-
+    backgroundColor: theme.palette.common.light,
   },
 }))
 
@@ -29,7 +29,7 @@ export default function SelectCustom(props) {
   };
 
   return (
-    <FormControl variant="outlined">
+    <FormControl variant="outlined" className={classes.root}>
       <Select
         labelId="selctor-label"
         id="sector-select"
