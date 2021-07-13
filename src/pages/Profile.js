@@ -3,10 +3,12 @@ import Hero from '../components/Hero';
 import Controls from '../components/controls/Controls';
 import Form from '../components/Form';
 import PaperForm from '../components/PaperForm';
+import PageTitle from '../components/PageTitle';
 
 export default function Profile(props) {
   return (
-    <React.Fragment>
+    <>
+      <PageTitle title='Profile' />
       <Hero heroType='plain' />
 
       <PaperForm>
@@ -43,6 +45,6 @@ export default function Profile(props) {
           </Controls.FormGroupCustom>
         </Form>
       </PaperForm>
-    </React.Fragment>
+    </>
   )
 }

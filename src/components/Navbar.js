@@ -22,7 +22,6 @@ import { useTheme } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from "react-router-dom";
 
@@ -36,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     ...theme.container,
+    padding: '0',
     '& h6': {
       ...theme.fonts.bold,
     }

@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginTop: '20px',
     padding: '25px',
+    [theme.breakpoints.down('xs')]: {
+      backgroundColor: theme.palette.common.delta,
+    },
     '& .MuiFormGroup-root': {
       marginBottom: '20px',
       '&:last-child': {
@@ -18,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '13px',
       textAlign: 'center',
       margin: '0'
-    }
+    },
   }
 }))
 
