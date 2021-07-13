@@ -5,9 +5,9 @@ import ListingFilter from '../components/ListingFilter'
 export default function Notifications(props) {
 
   return (
-    <React.Fragment>
+    <>
       <Hero heroType='plain' />
       <ListingFilter />
-    </React.Fragment>
+    </>
   )
 }

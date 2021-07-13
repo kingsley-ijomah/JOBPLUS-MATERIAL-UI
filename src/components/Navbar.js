@@ -50,10 +50,13 @@ const useStyles = makeStyles((theme) => ({
   },
   iconsWrap: {
     marginLeft: 'auto',
+    '& .MuiButtonBase-root': {
+      marginLeft: '13px',
+    }
   },
   icons: {
     fontSize: '29px',
-    marginLeft: '13px'
+    // marginLeft: '13px'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -119,23 +122,23 @@ export default function Navbar({ props }) {
           </Hidden>
 
           <Box className={classes.iconsWrap}>
-            <IconButton component={Link} to={'/search'} edge="start" color="inherit">
+            <IconButton size="small" component={Link} to={'/search'} edge="start" color="inherit">
               <SearchIcon className={classes.icons} />
             </IconButton>
-            <IconButton component={Link} to={'/notifications'} edge="start" color="inherit">
+            <IconButton size="small" component={Link} to={'/notifications'} edge="start" color="inherit">
               <Badge color="error" overlap="circle" variant="dot">
                 <NotificationsNoneIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton component={Link} to={'/saved-jobs'} edge="start" color="inherit" >
+            <IconButton size="small" component={Link} to={'/saved-jobs'} edge="start" color="inherit" >
               <Badge badgeContent={2} classes={{ badge: classes.badge }}>
                 <StarBorderIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton component={Link} to={'/profile'} edge="start" color="inherit">
+            <IconButton size="small" component={Link} to={'/profile'} edge="start" color="inherit">
               <PersonOutlineIcon className={classes.icons} />
             </IconButton>
-            <IconButton edge="start" color="inherit">
+            <IconButton size="small" edge="start" color="inherit">
               <ExitToAppIcon className={classes.icons} />
             </IconButton>
           </Box>
