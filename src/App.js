@@ -9,6 +9,8 @@ import Notifications from './pages/Notifications'
 import SavedJobs from './pages/SavedJobs'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
+import Login from './pages/Login'
+import Register from './pages/Register'
 import Cookie from './components/Cookie'
 import Footer from './components/Footer'
 
@@ -26,6 +28,8 @@ function App() {
           <Route exact path='/notifications' render={props => <Notifications {...props} />} />
           <Route exact path='/saved-jobs' render={props => <SavedJobs {...props} />} />
           <Route exact path='/profile' render={props => <Profile {...props} />} />
+          <Route exact path='/login' render={props => <Login {...props} />} />
+          <Route exact path='/register' render={props => <Register {...props} />} />
         </Switch>
       </BrowserRouter>
 
