@@ -6,6 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.container,
+    marginBottom: '100px'
   },
   caption: {
     margin: '1.5rem 0',

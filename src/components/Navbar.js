@@ -138,7 +138,7 @@ export default function Navbar({ props }) {
             <IconButton size="small" component={Link} to={'/profile'} edge="start" color="inherit">
               <PersonOutlineIcon className={classes.icons} />
             </IconButton>
-            <IconButton size="small" edge="start" color="inherit">
+            <IconButton size="small" component={Link} to={'/login'} edge="start" color="inherit">
               <ExitToAppIcon className={classes.icons} />
             </IconButton>
           </Box>
