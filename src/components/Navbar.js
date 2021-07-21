@@ -96,6 +96,12 @@ export default function Navbar({ props }) {
     setOpen(false);
   };
 
+  const routes = [
+    { name: 'Home', link: '/' },
+    { name: 'Job Listings', link: '/job-listings' },
+    { name: 'Job Applications', link: '/job-applications' }
+  ];
+
   return (
     <Box className={classes.root}>
       <AppBar position="static">
@@ -115,9 +121,15 @@ export default function Navbar({ props }) {
 
           <Hidden smDown>
             <Tabs>
-              <Tab className={classes.tabs} label="Home" component={Link} to={'/'} />
-              <Tab className={classes.tabs} label="Job listing" component={Link} to={'/job-listings'} />
-              <Tab className={classes.tabs} label="Job applications" component={Link} to={'/job-applications'} />
+              {routes.map((route, index) => (
+                <Tab
+                  key={`${route}${index}`}
+                  className={classes.tabs}
+                  label={route.name}
+                  component={Link}
+                  to={route.link}
+                />
+              ))}
             </Tabs>
           </Hidden>
 
@@ -161,15 +173,11 @@ export default function Navbar({ props }) {
         </div>
         <Divider />
         <List>
-          <ListItem component={Link} to={'/'} button>
-            <ListItemText primary={'HOME'} />
-          </ListItem>
-          <ListItem component={Link} to={'/job-listings'} button>
-            <ListItemText primary={'JOB LISTING'} />
-          </ListItem>
-          <ListItem component={Link} to={'/job-applications'} button>
-            <ListItemText primary={'JOB APPLICATION'} />
-          </ListItem>
+          {routes.map((route, index) => (
+            <ListItem key={`${route}${index}`} component={Link} to={route.link} button>
+              <ListItemText primary={route.name} />
+            </ListItem>
+          ))}
         </List>
       </Drawer>
 
