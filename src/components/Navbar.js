@@ -80,20 +80,23 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     marginRight: '15px',
   },
+  indicator: {
+    backgroundColor: theme.palette.common.light,
+  }
 }));
 
 export default function Navbar({ props }) {
   const classes = useStyles();
 
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpenDrawer(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    setOpenDrawer(false);
   };
 
   const routes = [
@@ -101,6 +104,11 @@ export default function Navbar({ props }) {
     { name: 'Job Listings', link: '/job-listings' },
     { name: 'Job Applications', link: '/job-applications' }
   ];
+
+  const [value, setValue] = useState(2);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <Box className={classes.root}>
@@ -120,7 +128,11 @@ export default function Navbar({ props }) {
           <Typography component="h6">JOBPLUS</Typography>
 
           <Hidden smDown>
-            <Tabs>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              classes={{ indicator: classes.indicator }}
+            >
               {routes.map((route, index) => (
                 <Tab
                   key={`${route}${index}`}
@@ -161,7 +173,7 @@ export default function Navbar({ props }) {
         className={classes.drawer}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={openDrawer}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -174,7 +186,13 @@ export default function Navbar({ props }) {
         <Divider />
         <List>
           {routes.map((route, index) => (
-            <ListItem key={`${route}${index}`} component={Link} to={route.link} button>
+            <ListItem
+              key={`${route}${index}`}
+              component={Link}
+              to={route.link}
+              onClick={handleDrawerClose}
+              selected={window.location.pathname === route.link}
+              button>
               <ListItemText primary={route.name} />
             </ListItem>
           ))}

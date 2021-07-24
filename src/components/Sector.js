@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -112,9 +113,9 @@ export default function Sector({ props }) {
 
           <Hidden smDown>
             <ul className={classes.list}>
-              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+              <li><Link to='/'>Accountancy jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Acturial jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Admin, Secretarial jobs <span>(5,757)</span></Link></li>
             </ul>
           </Hidden>
         </div>
@@ -128,9 +129,9 @@ export default function Sector({ props }) {
 
           <Hidden smDown>
             <ul className={classes.list}>
-              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+              <li><Link to='/'>Accountancy jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Acturial jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Admin, Secretarial jobs <span>(5,757)</span></Link></li>
             </ul>
           </Hidden>
         </div>
@@ -144,9 +145,9 @@ export default function Sector({ props }) {
 
           <Hidden smDown>
             <ul className={classes.list}>
-              <li><a href="">Accountancy jobs <span>(5,757)</span></a></li>
-              <li><a href="">Acturial jobs <span>(5,757)</span></a></li>
-              <li><a href="">Admin, Secretarial jobs <span>(5,757)</span></a></li>
+              <li><Link to='/'>Accountancy jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Acturial jobs <span>(5,757)</span></Link></li>
+              <li><Link to='/'>Admin, Secretarial jobs <span>(5,757)</span></Link></li>
             </ul>
           </Hidden>
         </div>
