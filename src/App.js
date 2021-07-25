@@ -18,7 +18,6 @@ function App() {
   let history = useHistory()
   return (
     <BrowserRouter history={history}>
-      <Navbar />
       <Switch>
         <Route exact path='/' render={props => <Home {...props} />} />
         <Route exact path='/job-listings' render={props => <JobListings {...props} />} />
@@ -30,9 +29,6 @@ function App() {
         <Route exact path='/login' render={props => <Login {...props} />} />
         <Route exact path='/register' render={props => <Register {...props} />} />
       </Switch>
-
-      <Cookie />
-      <Footer />
     </BrowserRouter>
   );
 }

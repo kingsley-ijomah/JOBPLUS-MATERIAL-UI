@@ -3,6 +3,7 @@ import Form from '../components/Form';
 import Controls from '../components/controls/Controls';
 import PaperForm from '../components/PaperForm';
 import PageTitle from '../components/PageTitle';
+import SiteWrapper from '../components/SiteWrapper';
 
 export default function Register(props) {
 

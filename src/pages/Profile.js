@@ -3,10 +3,11 @@ import Controls from '../components/controls/Controls';
 import Form from '../components/Form';
 import PaperForm from '../components/PaperForm';
 import PageTitle from '../components/PageTitle';
+import SiteWrapper from '../components/SiteWrapper';
 
 export default function Profile(props) {
   return (
-    <>
+    <SiteWrapper>
       <PageTitle title='Profile' />
 
       <PaperForm>
@@ -43,6 +44,6 @@ export default function Profile(props) {
           </Controls.FormGroupCustom>
         </Form>
       </PaperForm>
-    </>
+    </SiteWrapper>
   )
 }
