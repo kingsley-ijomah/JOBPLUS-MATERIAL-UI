@@ -1,5 +1,5 @@
 import Tabs from '@material-ui/core/Tabs';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Tab from '@material-ui/core/Tab';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -100,15 +100,25 @@ export default function Navbar({ props }) {
   };
 
   const routes = [
-    { name: 'Home', link: '/' },
-    { name: 'Job Listings', link: '/job-listings' },
-    { name: 'Job Applications', link: '/job-applications' }
+    { name: 'Home', link: '/', index: 0 },
+    { name: 'Job Listings', link: '/job-listings', index: 1 },
+    { name: 'Job Applications', link: '/job-applications', index: 2 }
   ];
 
-  const [value, setValue] = useState(2);
+  const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // takes care of setting active link when refreshed
+  useEffect(() => {
+    // start by hiding active link
+    setValue(-1)
+    routes.map((route) => {
+      if (window.location.pathname === route.link) setValue(route.index)
+    })
+  }, [value,])
+
 
   return (
     <Box className={classes.root}>
@@ -146,23 +156,23 @@ export default function Navbar({ props }) {
           </Hidden>
 
           <Box className={classes.iconsWrap}>
-            <IconButton size="small" component={Link} to={'/search'} edge="start" color="inherit">
+            <IconButton onClick={() => setValue(-1)} size="small" component={Link} to={'/search'} edge="start" color="inherit">
               <SearchIcon className={classes.icons} />
             </IconButton>
-            <IconButton size="small" component={Link} to={'/notifications'} edge="start" color="inherit">
+            <IconButton onClick={() => setValue(-1)} size="small" component={Link} to={'/notifications'} edge="start" color="inherit">
               <Badge color="error" overlap="circle" variant="dot">
                 <NotificationsNoneIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton size="small" component={Link} to={'/saved-jobs'} edge="start" color="inherit" >
+            <IconButton onClick={() => setValue(-1)} size="small" component={Link} to={'/saved-jobs'} edge="start" color="inherit" >
               <Badge badgeContent={2} classes={{ badge: classes.badge }}>
                 <StarBorderIcon className={classes.icons} />
               </Badge>
             </IconButton>
-            <IconButton size="small" component={Link} to={'/profile'} edge="start" color="inherit">
+            <IconButton onClick={() => setValue(-1)} size="small" component={Link} to={'/profile'} edge="start" color="inherit">
               <PersonOutlineIcon className={classes.icons} />
             </IconButton>
-            <IconButton size="small" component={Link} to={'/login'} edge="start" color="inherit">
+            <IconButton onClick={() => setValue(-1)} size="small" component={Link} to={'/login'} edge="start" color="inherit">
               <ExitToAppIcon className={classes.icons} />
             </IconButton>
           </Box>

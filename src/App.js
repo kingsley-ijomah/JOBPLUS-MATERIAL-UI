@@ -17,25 +17,23 @@ import Footer from './components/Footer'
 function App() {
   let history = useHistory()
   return (
-    <React.Fragment>
-      <BrowserRouter history={history}>
-        <Navbar />
-        <Switch>
-          <Route exact path='/' render={props => <Home {...props} />} />
-          <Route exact path='/job-listings' render={props => <JobListings {...props} />} />
-          <Route exact path='/job-applications' render={props => <JobApplications {...props} />} />
-          <Route exact path='/search' render={props => <Search {...props} />} />
-          <Route exact path='/notifications' render={props => <Notifications {...props} />} />
-          <Route exact path='/saved-jobs' render={props => <SavedJobs {...props} />} />
-          <Route exact path='/profile' render={props => <Profile {...props} />} />
-          <Route exact path='/login' render={props => <Login {...props} />} />
-          <Route exact path='/register' render={props => <Register {...props} />} />
-        </Switch>
-      </BrowserRouter>
+    <BrowserRouter history={history}>
+      <Navbar />
+      <Switch>
+        <Route exact path='/' render={props => <Home {...props} />} />
+        <Route exact path='/job-listings' render={props => <JobListings {...props} />} />
+        <Route exact path='/job-applications' render={props => <JobApplications {...props} />} />
+        <Route exact path='/search' render={props => <Search {...props} />} />
+        <Route exact path='/notifications' render={props => <Notifications {...props} />} />
+        <Route exact path='/saved-jobs' render={props => <SavedJobs {...props} />} />
+        <Route exact path='/profile' render={props => <Profile {...props} />} />
+        <Route exact path='/login' render={props => <Login {...props} />} />
+        <Route exact path='/register' render={props => <Register {...props} />} />
+      </Switch>
 
       <Cookie />
       <Footer />
-    </React.Fragment >
+    </BrowserRouter>
   );
 }
 
