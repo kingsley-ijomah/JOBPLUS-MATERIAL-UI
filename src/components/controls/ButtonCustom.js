@@ -20,12 +20,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function ButtonCustom(props) {
-  const { text, variant, ...other } = props;
+  // object destructuring
+  const { text = 'Submit', ...other } = props;
   const classes = useStyles();
 
   return (
     <Button
-      variant={variant || "contained"}
       classes={{ root: classes.root }}
       {...other}>
       {text}

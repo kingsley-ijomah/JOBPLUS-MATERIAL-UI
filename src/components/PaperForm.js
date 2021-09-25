@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '500px',
     backgroundColor: theme.palette.common.light,
-    margin: '0 auto',
+    margin: '0 auto 150px auto',
     marginTop: '20px',
     padding: '25px',
     [theme.breakpoints.down('xs')]: {

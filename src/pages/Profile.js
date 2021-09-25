@@ -3,11 +3,16 @@ import Controls from '../components/controls/Controls';
 import Form from '../components/Form';
 import PaperForm from '../components/PaperForm';
 import PageTitle from '../components/PageTitle';
-import SiteWrapper from '../components/SiteWrapper';
 
 export default function Profile(props) {
+  const sectors = [
+    { name: 'Technology' },
+    { name: 'Engineering' },
+    { name: 'Health' },
+  ];
+
   return (
-    <SiteWrapper>
+    <>
       <PageTitle title='Profile' />
 
       <PaperForm>
@@ -31,7 +36,7 @@ export default function Profile(props) {
 
           <Controls.FormGroupCustom>
             <Controls.InputLabelCustom color='primary' label="Sector" />
-            <Controls.SelectCustom />
+            <Controls.SelectCustom items={sectors} />
           </Controls.FormGroupCustom>
 
           <Controls.FormGroupCustom>
@@ -44,6 +49,6 @@ export default function Profile(props) {
           </Controls.FormGroupCustom>
         </Form>
       </PaperForm>
-    </SiteWrapper>
+    </>
   )
 }

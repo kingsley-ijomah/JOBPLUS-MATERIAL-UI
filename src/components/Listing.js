@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
+import Controls from '../components/controls/Controls';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -71,14 +72,30 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'right',
     display: 'block',
     color: 'inherit',
+  },
+  skills: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    listStyle: 'none',
+    padding: '0',
+    marginBottom: '20px',
+    '& li': {
+      backgroundColor: theme.palette.common.skills,
+      padding: '7px 9px',
+      fontSize: '14px',
+      borderRadius: '16px',
+      marginRight: '10px',
+      marginBottom: '10px',
+    }
   }
 }))
 
 export default function Listing(props) {
   const classes = useStyles();
+  const { detailed = true } = props;
 
   return (
-    <React.Fragment>
+    <>
       <div className={classes.root}>
         <header className={classes.header}>
           <Typography className={classes.title} variant="h1">Regulatory Affairs Senior Manager</Typography>
@@ -92,14 +109,61 @@ export default function Listing(props) {
           <li><img src="images/timer.svg" alt="" />Contract, full-time</li>
         </ul>
 
-        <p className={classes.details}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Explicabo, asperiores ullam minus at <b><Link to="/">Read more...</Link></b>
-        </p>
-
-        <Link className={classes.cta} to="/">Withdraw application</Link>
-
+        {!detailed ? (
+          <>
+            <p className={classes.details}>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Explicabo, asperiores ullam minus at <b><Link to="/">Read more...</Link></b>
+            </p>
+            <Link className={classes.cta} to="/">Withdraw application</Link>
+          </>
+        ) : (
+          <Controls.FormGroupCustom className={classes.button}>
+            <Controls.ButtonCustom text="Apply Now" />
+          </Controls.FormGroupCustom>
+        )}
       </div>
-    </React.Fragment>
+
+      { detailed ? (
+        <>
+          <p className={classes.details}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem molestiae delectus
+            culpa dolore sequi debitis eligendi veniam reprehenderit, deleniti voluptate
+            perferendis consectetur quibusdam iure suscipit, quaerat quia, natus eum vel.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem molestiae delectus culpa
+            dolore sequi debitis eligendi veniam reprehenderit, deleniti voluptate perferendis consectetur
+            quibusdam iure suscipit, quaerat quia, natus eum vel.
+          </p>
+
+          <h3>Required skills</h3>
+
+          <ul className={classes.skills}>
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Python</li>
+            <li>Javascript</li>
+            <li>React</li>
+            <li>PHP</li>
+            <li>C#</li>
+            <li>Ruby</li>
+            <li>Django</li>
+            <li>React</li>
+            <li>PHP</li>
+            <li>C#</li>
+            <li>Ruby</li>
+            <li>Django</li>
+          </ul>
+
+          <div className={classes.apply}>
+            <Controls.FormGroupCustom className={classes.button}>
+              <Controls.ButtonCustom text="Apply Now" />
+            </Controls.FormGroupCustom>
+          </div>
+        </>
+      ) : ''}
+    </>
   )
 }

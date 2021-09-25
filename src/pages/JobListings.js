@@ -1,14 +1,14 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Listing from '../components/Listing';
 import ListingFilter from '../components/ListingFilter';
-import SiteWrapper from '../components/SiteWrapper';
 
 export default function JobListings(props) {
-
+  const listings = [<Listing detailed={false} />, <Listing detailed={false} />]
   return (
-    <SiteWrapper>
+    <>
       <Hero heroType='plain' />
-      <ListingFilter />
-    </SiteWrapper>
+      <ListingFilter components={listings} />
+    </>
   )
 }

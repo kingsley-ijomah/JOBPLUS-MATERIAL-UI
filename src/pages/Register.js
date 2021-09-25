@@ -3,7 +3,7 @@ import Form from '../components/Form';
 import Controls from '../components/controls/Controls';
 import PaperForm from '../components/PaperForm';
 import PageTitle from '../components/PageTitle';
-import SiteWrapper from '../components/SiteWrapper';
+import { Link } from "react-router-dom";
 
 export default function Register(props) {
 
@@ -41,7 +41,7 @@ export default function Register(props) {
             <Controls.ButtonCustom text="Register" />
           </Controls.FormGroupCustom>
         </Form>
-        <p className={'Footer'}>Already have an account? <a href="/login">Login</a></p>
+        <p className={'Footer'}>Already have an account? <Link to="/login">Login</Link></p>
       </PaperForm>
     </>
   )

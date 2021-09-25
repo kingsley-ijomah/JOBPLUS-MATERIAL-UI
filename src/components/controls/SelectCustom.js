@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function SelectCustom(props) {
+  const { items } = props;
+
   const classes = useStyles();
 
   const [value, setValue] = React.useState('');
@@ -39,13 +41,12 @@ export default function SelectCustom(props) {
         value={value}
         onChange={handleChange}
       >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={10}>Technology</MenuItem>
-        <MenuItem value={20}>Engineering</MenuItem>
-        <MenuItem value={30}>Health</MenuItem>
+        {
+          items.map(item => (
+            <MenuItem value={item.name}>{item.name}</MenuItem>
+          ))
+        }
       </Select>
-    </FormControl>
+    </FormControl >
   )
 }

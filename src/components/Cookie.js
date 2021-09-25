@@ -11,14 +11,15 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     width: '100%',
     bottom: '50px',
-    '& .MuiAlert-standardSuccess': {
-      backgroundColor: theme.palette.common.beta,
-      color: theme.palette.common.light,
-    },
+  },
+  standardSuccess: {
+    // .MuiAlert-standardSuccess
+    backgroundColor: theme.palette.common.beta,
+    color: theme.palette.common.light,
     '& .MuiSvgIcon-root': {
       color: theme.palette.common.light,
     }
-  },
+  }
 }))
 
 export default function Cookie({ props }) {
@@ -29,6 +30,7 @@ export default function Cookie({ props }) {
     <AppBar position='static' className={classes.root}>
       <Collapse in={open}>
         <Alert
+          classes={{ standardSuccess: classes.standardSuccess }}
           action={
             <IconButton
               aria-label="close"
